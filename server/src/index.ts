@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import http from "http";
 import { Server } from "socket.io";
 import cors from "cors";
@@ -157,7 +157,7 @@ io.on("connection", (socket) => {
 });
 
 // Health check endpoint
-app.get("/health", (req, res) => {
+app.get("/health", (req: Request, res: Response) => {
   res.status(200).send("OK");
 });
 
